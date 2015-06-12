@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="naiveDNA">
+<head>
+    <meta charset="UTF-8">
+    <title>naive dna gen.</title>
+
+    <!-- bower:css -->
+    <!-- endbower -->
+
+    <script src="bower_components/angular/angular.js"></script>
+
+</head>
+<body ng-controller="bodyCtrl">
+    <h1>{{mainTitle}}</h1>
+    <h2>{{subTitle}}</h2>
+
+    <input type="number" ng-model="numNts" placeholder="how many nucleotides?"></input>
+	<button ng-click="genDNA()">Generate DNA!</button>
+	<div ng-show="currentSeq">
+    	You just generated: <textarea>{{currentSeq}}</textarea>
+	</div>
+
+    <hr> <center> <button ng-click="getSeqs()">All Sequences</button> </center>
+		<div ng-repeat="seq in seqs">
+    		<p>{{seq.len}}</p>
+    		<textarea>{{seq.sequence}}</textarea>
+		</div>
+
+    <!-- bower:js -->
+    <!-- endbower -->
+    <script src="js/main.js"></script>
+</body>
+</html>
